@@ -1,0 +1,54 @@
+//tag::ref-doc[]
+= Mylog sink
+
+Use the Mylog app in a stream as a simple logger
+
+== Input
+
+=== Headers
+
+N/A
+
+=== Payload
+
+* Any
+
+== Output
+
+=== Headers
+
+N/A
+
+=== Payload
+
+* Any
+
+== Options
+
+The **$$converter$$** $$processor$$ has the following options:
+
+//tag::configuration-properties[]
+$$mylogrx.level$$:: $$<documentation missing>$$ *($$Level$$, default: `$$<none>$$`, possible values: `FATAL`,`ERROR`,`WARN`,`INFO`,`DEBUG`,`TRACE`)*
+//end::configuration-properties[]
+
+== Build
+
+```
+$ ./mvnw clean install -PgenerateApps
+$ cd apps
+```
+You can find the corresponding binder based projects here.
+You can then cd into one one of the folders and build it:
+```
+$ ./mvnw clean package
+```
+
+== Examples
+
+```
+java -jar converter-processor.jar --expression=payload.toUpperCase()
+```
+
+This converter will convert all message payloads to upper case.
+
+//end::ref-doc[]
